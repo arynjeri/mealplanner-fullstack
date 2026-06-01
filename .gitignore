@@ -2,3 +2,12 @@ node_modules
 .env
 package-lock.json
 
+public
+main.jsx
+level-2/.gitignore
+level-2/index.html
+eslint.config.js
+vite.config.js
+assets
+App.css
+index.css
