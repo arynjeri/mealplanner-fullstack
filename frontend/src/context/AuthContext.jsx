@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/set-state-in-effect */
+/* eslint-disable react-refresh/only-export-components */
 import { createContext, useState, useEffect } from 'react';
 
 export const AuthContext = createContext(null);
@@ -11,7 +13,6 @@ export function AuthProvider({ children }) {
     // If a token exists on boot, fetch the user profile or parse it
     if (token) {
       localStorage.setItem('token', token);
-      // For now, we'll decode a basic placeholder user or you can hit a GET /api/auth/me endpoint
       setUser({ email: localStorage.getItem('userEmail') || 'user@test.com' });
     } else {
       localStorage.removeItem('token');

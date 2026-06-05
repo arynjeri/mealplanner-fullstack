@@ -28,7 +28,7 @@ userSchema.pre('save', async function() {
     this.password = await bcrypt.hash(this.password, 12);
 });
 
-// Instance method: Convenient helper to verify passwords later during login
+// helper to verify passwords  during login
 userSchema.methods.correctPassword = async function(candidatePassword, userPassword) {
     return await bcrypt.compare(candidatePassword, userPassword);
 };

@@ -9,7 +9,7 @@ export const mealAPI = {
       
     const response = await fetch(url);
     if (!response.ok) throw new Error('Failed to retrieve calendar meal records.');
-    return response.json(); // Directly returns the raw array from your controller
+    return response.json();
   },
 
   // Calls your exports.createMealSlot backend controller

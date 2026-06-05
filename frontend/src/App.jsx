@@ -3,6 +3,7 @@ import { AuthContext } from './context/AuthContext';
 import AuthScreen from './components/AuthScreen';
 import MealCalendar from './features/mealPlanner/MealCalender';
 import RecipeList from './features/recipes/RecipeList';
+import NotificationToast from './components/NotificationToast';
 
 export default function App() {
   const { user } = useContext(AuthContext);
@@ -13,6 +14,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased">
+      <NotificationToast />
       {/* Sticky top brand identifier */}
       <header className="sticky top-0 z-50 bg-white border-b border-slate-200 px-6 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-2">
@@ -34,3 +36,4 @@ export default function App() {
     </div>
   );
 }
+   

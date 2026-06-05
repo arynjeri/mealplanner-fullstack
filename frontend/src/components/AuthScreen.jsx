@@ -54,7 +54,7 @@ export default function AuthScreen() {
 
         {error && (
           <div className="p-3 bg-rose-50 border border-rose-150 text-rose-700 text-xs font-semibold rounded-xl">
-            ⚠️ {error}
+             {error}
           </div>
         )}
 

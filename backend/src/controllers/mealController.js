@@ -109,6 +109,7 @@ exports.createMealSlot = async (req, res, next) => {
 
         await plan.save();
         await plan.populate('meals.recipe');
+        req.io.emit('notification', { title: "Meal Slot Created", message: `Your ${slot} slot for ${date} was successfully created!` });
         res.status(201).json(plan);
     } catch (error) {
         console.error('Error creating meal slot:', error);
@@ -160,7 +161,7 @@ exports.updateSpecificMealSlot = async (req, res, next) => {
 
         await plan.save();
         await plan.populate('meals.recipe');
-        
+        req.io.emit('notification', { title: "Meal Slot Updated", message: `Your ${slot} slot for ${date} was successfully updated!` });
         res.status(200).json(plan);
     } catch (error) {
         console.error('Error updating specific meal slot:', error);
@@ -187,6 +188,7 @@ exports.updateMealPlan = async (req, res, next) => {
         if (!updatePlan) {
             return res.status(404).json({ message: `Meal plan not found for the specified date: ${date}` });
         }
+        req.io.emit('notification', { title: "Meal Plan Updated", message: `Your meal plan for ${date} was successfully updated!` });
         res.json(updatePlan);
     } catch (error) {
         console.error('Error updating meal plan:', error);
@@ -205,6 +207,7 @@ exports.deleteEntireMealPlan = async (req, res, next) => {
         if (!deletedPlan) {
             return res.status(404).json({ message: `Meal plan not found for the specified date: ${date}` });
         }
+        req.io.emit('notification', { title: "Meal Plan Deleted", message: `Your entire meal plan for ${date} was successfully deleted!` });
         res.status(204).json({ status: 'success', data: null });
     } catch (error) {
         console.error('Error deleting entire meal plan:', error);
@@ -231,6 +234,7 @@ exports.deleteMealSlot = async (req, res, next) => {
         }
         await plan.save();
         await plan.populate('meals.recipe');
+        req.io.emit('notification', { title: "Meal Slot Deleted", message: `Your ${slot} slot for ${date} was successfully deleted!` });
         res.status(200).json(plan);
     } catch (error) {
         console.error('Error removing specific meal slot:', error);

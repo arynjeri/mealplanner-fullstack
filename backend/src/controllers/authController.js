@@ -7,7 +7,7 @@ const signToken = (id) => {
     });
 };
 
-// 🟢 FIXED: Added 'next' to the parameter arguments array list
+// register/signup 
 exports.signup = async (req, res, next) => {
     try {
         const { name, email, password } = req.body;
@@ -30,12 +30,11 @@ exports.signup = async (req, res, next) => {
         if (error.code === 11000) {
             return res.status(400).json({ message: 'Email address already in use.' });
         }
-        // Safely pass the error along to your global error handler middleware!
         next(error); 
     }
 };
 
-// 🟢 FIXED: Added 'next' here as well for safety
+// login/signin
 exports.login = async (req, res, next) => {
     try {
         const { email, password } = req.body;

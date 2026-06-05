@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const mealPlanSchema = new mongoose.Schema({
-  // Storing as YYYY-MM-DD string avoids time-zone shift
+  // Storing as YYYY-MM-DD string
   date: { 
     type: String, 
     required: true, 
