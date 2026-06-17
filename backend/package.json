@@ -1,7 +1,7 @@
 {
   "name": "level-1",
   "version": "1.0.0",
-  "description": "",
+  "description": "This project represents Level 1 of my backend development work. It demonstrates a complete development environment and a REST API built with Node.js, Express, and MongoDB to manage recipes and meal plans.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -18,8 +18,8 @@
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
-    "mongoose": "^9.6.2",
-    "multer": "^2.1.1",
+    "mongoose": "^9.7.0",
+    "multer": "^2.2.0",
     "nodemon": "^3.1.14",
     "socket.io": "^4.8.3"
   }

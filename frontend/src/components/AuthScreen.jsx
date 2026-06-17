@@ -48,7 +48,7 @@ export default function AuthScreen() {
             {isSignUp ? 'Create Account' : 'Welcome Back'}
           </h2>
           <p className="text-xs text-slate-500 mt-1">
-            {isSignUp ? 'Sign up to manage your meals' : 'Log in to view your dynamic scheduler'}
+            {isSignUp ? 'Sign up to manage your meals' : 'Log in to view your meal scheduler'}
           </p>
         </div>
 
